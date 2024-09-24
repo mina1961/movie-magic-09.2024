@@ -10,8 +10,10 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 app.set('views', './src/views');
 
+app.use(exspress.static('public'));
+
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('home');
 })
 
 
