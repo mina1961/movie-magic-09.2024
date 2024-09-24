@@ -1,6 +1,8 @@
 import exspress from "express";
 import handlebars from "express-handlebars";
 
+import homeController from "./controllers/homeController.js";
+
 const app = exspress();
 
 app.engine('hbs', handlebars.engine({
@@ -12,15 +14,8 @@ app.set('views', './src/views');
 
 app.use(exspress.static('public'));
 
-app.get('/', (req, res) => {
-    res.render('home');
-})
+app.use(homeController);
 
-
-app.get('/', (req, res) => {
-    res.send("Hello World!");
-})
-
-app.listen(5000, ()=> {
+app.listen(5000, () => {
     console.log("Server is running on http://localhost:5000...");
 })
