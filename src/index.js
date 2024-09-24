@@ -1,9 +1,9 @@
-import exspress from "express";
+import express from "express";
 import handlebars from "express-handlebars";
 
-import homeController from "./controllers/homeController.js";
+import routes from "./routes.js";
 
-const app = exspress();
+const app = express();
 
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
@@ -12,9 +12,9 @@ app.engine('hbs', handlebars.engine({
 app.set('view engine', 'hbs');
 app.set('views', './src/views');
 
-app.use(exspress.static('public'));
+app.use(express.static('public'));
 
-app.use(homeController);
+app.use(routes);
 
 app.listen(5000, () => {
     console.log("Server is running on http://localhost:5000...");
