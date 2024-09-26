@@ -10,7 +10,7 @@ router.get('/create', (req, res) => {
 })
 
 router.post('/create', async (req, res) => {
-    
+
     const moviData = req.body
     // save movie data in db
 
@@ -22,10 +22,15 @@ router.post('/create', async (req, res) => {
 router.get('/:movieId/details', async (req, res) => {
 
     const movieId = req.params.movieId;
-
     const movie = await movieService.getOne(movieId)
-
+    //prepare view data
+    movie.ratingView = getRatingData(movie.rating)
     res.render('movies/details', { movie });
-})
+});
+
+function getRatingData(rating) {
+    
+    return "&#x2605;".repeat(rating)
+}
 
 export default router;
