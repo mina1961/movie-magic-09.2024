@@ -16,7 +16,7 @@ router.post('/create', async (req, res) => {
 
     await movieService.create(moviData);
 
-    res.end()
+    res.redirect('/')
 })
 
 export default router;
