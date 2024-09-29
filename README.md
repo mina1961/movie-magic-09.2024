@@ -1,7 +1,8 @@
 # movie-magic-09.2024
 JS Back-End workshop @SoftUni
 
-## Developing steps
+## Developing steps - Workshop 1
+
     1. Initial Project Architecture
     2. Setup express
     3. Setup hadelbars
@@ -14,3 +15,8 @@ JS Back-End workshop @SoftUni
     10. Add Create page
     11. Add details page
     12. Add search page
+
+## Developing steps - Workshop 2
+    1. Extract init files
+    2. Setup mongoose
+    3. Add models
