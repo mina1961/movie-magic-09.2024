@@ -21,3 +21,9 @@ JS Back-End workshop @SoftUni
     2. Setup mongoose
     3. Add movie model
     4. Convert file based storage to DB storage
+    5. Add cast model
+    6. Add create cast page
+
+* Add model validation
+* Fix filtering to movies
+* Add character name
