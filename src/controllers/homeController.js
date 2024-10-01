@@ -3,12 +3,13 @@ import movieService from "../services/movieService.js";
 
 const router = Router();
 
+//Temp solution
 function toArray(documents) {
     return documents.map(document => document.toObject());
 }
 
 router.get('/', async (req, res) => {
-    const movies = await movieService.getAll()
+    const movies = await movieService.getAll();  
     res.render('home', { movies: toArray(movies) });
 })
 
