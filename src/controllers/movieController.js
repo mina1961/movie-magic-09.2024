@@ -29,15 +29,19 @@ router.get('/search', async (req, res) => {
 router.get('/:movieId/details', async (req, res) => {
 
     const movieId = req.params.movieId;
-    const movie = await movieService.getOne(movieId)
+    const movie = await movieService.getOne(movieId).lean();
     //prepare view data
     movie.ratingView = getRatingData(movie.rating)
     res.render('movies/details', { movie });
 });
 
 function getRatingData(rating) {
+    if (!Number.isInteger(rating)) {
+        return 'n\\a';
+    }
     
-    return "&#x2605;".repeat(rating)
 }
 
 export default router;
+
+
