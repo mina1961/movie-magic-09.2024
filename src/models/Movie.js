@@ -1,6 +1,6 @@
-import { Shema, model } from 'mongoose';
+import { Schema, model } from 'mongoose';
 
-const movieSchema = new Shema({
+const movieSchema = new Schema({
     title: String,
     genre: String,
     director: String,
