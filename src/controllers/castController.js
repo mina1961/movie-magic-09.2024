@@ -9,7 +9,6 @@ router.get('/create', (req, res) => {
 
 router.post('/create', async (req, res) => {
     const cast = req.body;
-    console.log(cast);
 
     await castService.create(cast);
 
